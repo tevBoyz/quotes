@@ -68,19 +68,8 @@ function removeData(){
 }
 
 function getAllData(){
+    
     const dbref = ref(db);
-    // get(dbref, 'Quotes/').then(snapshot => {
-    //app.database().ref('Quotes/').once('value', (snapshot) =>{
-        // snapshot.forEach(
-    //         function(ChildSnapshot){
-    //             let author = ChildSnapshot.val().author;
-    //             let date = ChildSnapshot.val().date;
-    //             let quote = ChildSnapshot.val().quote;
-    //             let reference = ChildSnapshot.val().quote;
-    //             createCards(author, date, quote, reference);
-    //         }
-    //     )
-    // });
     get(child(dbref, "Quotes"))    
     .then((snapshot) => {
         snapshot.forEach(ChildSnapshot => 
@@ -90,6 +79,10 @@ function getAllData(){
                 ChildSnapshot.val().quote,
                 ChildSnapshot.val().reference)
             });
+            showSpinner(false);
+    })
+    .catch((error) =>{
+        alert(error);
     })
     
 }
@@ -177,4 +170,17 @@ function resetPopUp(){
     newQuote.value = "";
 }
 
+function showSpinner(status){
+    let spinner = document.getElementById('spin');
+    if (status) {
+        spinner.style.display = "block";
+    }
+
+    else{
+        spinner.style.display = "none";
+    }
+}
+
+
+showSpinner(true);
 getAllData();

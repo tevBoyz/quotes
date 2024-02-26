@@ -277,6 +277,31 @@ body {
   justify-content: end;
 }
 
+.spin::before {
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%);
+  width: 40px;
+  will-change: transform;
+}
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .banner h2 {
     font-family: monospace;
@@ -406,5 +431,21 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     justify-content: space-evenly;
+  }
+
+  .spin::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 5px #cfd0d1;
+    border-bottom-color: #1c87c9;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate3d(-80%, -50%);
+    width: 40px;
+    will-change: transform;
   }
 }
