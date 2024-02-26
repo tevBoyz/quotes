@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Quotes</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="title"><h1>Quotes</h1></div>
+      <div class="actions">
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+    <div class="banner">
+      <h2>What's your favourite quote? Share it with us!</h2>
+      <div class="qin">
+        <input type="text" id="qinput" placeholder="Type Your Quote Here..." />
+        <button id="share">Share</button>
+      </div>
+    </div>
+    <div class="main-container">
+      <h2>All Quotes</h2>
+      <div id="table-of-quotes" class="table-of-quotes"></div>
+    </div>
+
+    <div id="popup" class="popup">
+      <label for="Author">Author:</label>
+      <input
+        type="text"
+        name="Author"
+        id="authorIn"
+        placeholder="Your Name Please..."
+        required
+      />
+      <label for="reference">Reference:</label>
+      <input
+        type="text"
+        name="Reference"
+        id="referenceIn"
+        placeholder="Reference (Optional)..."
+      />
+      <label for="Quote" req>Quote: </label>
+      <input type="text" name="Quote" id="newQuote" required />
+      <label for="date" id="todaysDate">Date: </label>
+      <div class="buttons">
+        <button id="cancel">Cancel</button>
+        <button id="submit">Submit</button>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
